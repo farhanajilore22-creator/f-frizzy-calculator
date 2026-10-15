@@ -1,0 +1,190 @@
+/* General page styling */
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* F. Frizzy Calculator */
+.calculator {
+    margin: 50px auto;
+    padding: 25px 20px;
+    background: linear-gradient(145deg, #034694, #001F5B);
+    border: 2px solid #D4AF37;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    border: 2px solid #D4AF37;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3),
+        0 0 12px rgba(212, 175, 55, 0.2);
+}
+
+/* F. Frizzy Calculator heading */
+.calculator h1 {
+    color: #FFFFFF;
+    font-family: 'Pacifico', cursive;
+    font-size: 28px;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px #D4AF37, 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Calculator display */
+.display {
+    background-color: #FFFFFF;
+    height: 60px;
+    margin-bottom: 15px;
+    border: 2px solid #D4AF37;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    padding: 0 15px;
+    font-size: 30px;
+    font-weight: 500;
+    color: #034694;
+
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.08);
+
+    border: 2px solid #D4AF37;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Arrange buttons in four columns */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+/* General button styling */
+.buttons button {
+    width: 100%;
+    min-width: 0;
+    height: 60px;
+    box-sizing: border-box;
+
+    font-size: 22px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        opacity 0.15s ease,
+        background-color 0.2s ease;
+}
+
+.buttons button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(212, 175, 55, 0.35);
+}
+
+/* Button press effect */
+.buttons button:active {
+    transform: scale(0.95);
+    background-color: #cccccc;
+}
+
+/* Equals button */
+.buttons button.equals {
+    background: linear-gradient(145deg, #001F5B, #034694);
+    color: #FFD700;
+    font-weight: bold;
+    font-size: 24px;
+    border: 2px solid #D4AF37;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease;
+}
+
+/* Operator buttons */
+.buttons button.operator {
+    background: linear-gradient(145deg, #FFD700, #D4AF37);
+    color: #001F5B;
+    font-weight: bold;
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+/* Keep the equals button hover effect */
+.buttons button.operator:hover,
+.buttons button.equals:hover {
+    opacity: 0.85;
+}
+
+/* Style the backspace button */
+.buttons button:nth-child(2) {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Style the number and decimal buttons */
+.buttons button:not(.operator):not(.equals):nth-child(n+5) {
+    color: #222;
+}
+
+/* White number buttons */
+.buttons button:not(.operator):not(.equals) {
+    background-color: #FFFFFF;
+    color: #034694;
+    font-weight: bold;
+}
+
+/* Button click animation */
+.buttons button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(212, 175, 55, 0.4);
+}
+
+/* Responsive design for mobile devices */
+@media screen and (max-width: 480px) {
+    body {
+        margin: 0;
+        padding: 10px;
+    }
+
+    .calculator {
+        width: 100%;
+        max-width: 350px;
+        margin: 20px auto;
+        box-sizing: border-box;
+    }
+
+    .buttons button {
+        font-size: 18px;
+        min-height: 50px;
+    }
+
+    .display {
+        font-size: 26px;
+        overflow: hidden;
+    }
+}
+
+/* All Clear button */
+.buttons button.clear {
+    background: linear-gradient(145deg, #FFFFFF, #E6E6E6);
+    color: #B22222;
+    font-weight: bold;
+    border: 1px solid #D4AF37;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+/* AC button hover effect */
+.buttons button.clear:hover {
+    background: #B22222;
+    color: #FFFFFF;
+}

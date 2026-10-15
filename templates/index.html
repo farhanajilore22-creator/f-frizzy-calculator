@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>F. Frizzy Calculator</title>
+
+    <!-- Script font for the calculator heading -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Connect the app manifest -->
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+
+    <!-- Browser theme colour -->
+    <meta name="theme-color" content="#034694">
+
+    <!-- Calculator stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="calculator">
+
+        <h1>F. Frizzy Calculator</h1>
+
+        <div class="display">
+            0
+        </div>
+
+        <div class="buttons">
+
+            <button class="clear">AC</button>
+            <button>⌫</button>
+            <button>+/-</button>
+            <button>%</button>
+
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="operator">÷</button>
+
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="operator">×</button>
+
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="operator">-</button>
+
+            <button>0</button>
+            <button>.</button>
+            <button class="operator">+</button>
+            <button class="equals">=</button>
+
+
+        </div>
+
+        {% if result is not none %}
+        <h2>Result: {{ result }}</h2>
+        {% endif %}
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+    <!-- Register the service worker for offline support -->
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("/service-worker.js")
+                    .then(() => {
+                        console.log("F. Frizzy Calculator service worker registered!");
+                    })
+                    .catch((error) => {
+                        console.error("Service worker registration failed:", error);
+                    });
+            });
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{
+    "name": "F. Frizzy Calculator",
+    "short_name": "F. Frizzy",
+    "description": "A stylish calculator by F. Frizzy.",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#001F5B",
+    "theme_color": "#034694",
+    "icons": [
+        {
+            "src": "/static/icon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        }
+    ]
+}
